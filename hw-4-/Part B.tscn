@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://player.gd" id="1_3oyan"]
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_fdmr7"]
+[ext_resource type="Script" uid="uid://nffg24kxycvo" path="res://Interactable's.gd" id="3_fdmr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5h2"]
 size = Vector2(119, 120)
@@ -28,6 +29,9 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=288606861]
 position = Vector2(-0.5, 2)
 shape = SubResource("CircleShape2D_o6t7m")
+
+[node name="Interactables" type="Area2D" parent="InteractionArea" unique_id=9592748]
+script = ExtResource("3_fdmr7")
 
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
