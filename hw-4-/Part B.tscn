@@ -28,3 +28,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=288606861]
 position = Vector2(-0.5, 2)
 shape = SubResource("CircleShape2D_o6t7m")
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
