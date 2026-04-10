@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://player.gd" id="1_3oyan"]
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_fdmr7"]
-[ext_resource type="Script" uid="uid://nffg24kxycvo" path="res://Interactable's.gd" id="3_fdmr7"]
+[ext_resource type="Script" path="res://Interactable's.gd" id="3_fdmr7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5h2"]
 size = Vector2(119, 120)
@@ -14,12 +14,12 @@ radius = 76.91716
 position = Vector2(69, 126)
 script = ExtResource("1_3oyan")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439741055]
+texture = ExtResource("2_fdmr7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1785565967]
 position = Vector2(-1.5, -1)
 shape = SubResource("RectangleShape2D_ls5h2")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1439741055]
-texture = ExtResource("2_fdmr7")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=849713179]
 collision_layer = 0
