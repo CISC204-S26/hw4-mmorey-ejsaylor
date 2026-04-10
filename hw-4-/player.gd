@@ -16,14 +16,15 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_S):
 		direction.y += 1
 
+	if Input.is_action_just_pressed("Interact"):
+		if nearby_interactables.size() > 0:
+			nearby_interactables.back().interact()
+
 	velocity = direction * speed
 	move_and_slide()
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("interact"):
-		if nearby_interactables.size() > 0:
-			nearby_interactables.back().interact()
+	
 
 
 func _on_interaction_area_area_entered(area: Area2D) -> void:

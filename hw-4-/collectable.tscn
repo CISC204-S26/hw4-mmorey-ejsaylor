@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://g4w6mc35ogqp"]
 
-[ext_resource type="Script" uid="uid://eaip27fl1r6l" path="res://collectable.gd" id="1_un20x"]
+[ext_resource type="Script" path="res://collectable.gd" id="1_un20x"]
 [ext_resource type="Texture2D" uid="uid://c81q86bmywc0o" path="res://6fb38be8-0402-4d0e-b85f-e863c854ed86.png" id="2_4v1pg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_te2od"]
 radius = 95.90099
 
 [node name="Collectable" type="Area2D" unique_id=864278290]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_un20x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1767517182]
+position = Vector2(-660.307, -377.9741)
+scale = Vector2(0.31505275, 0.28119937)
+texture = ExtResource("2_4v1pg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=927892151]
 position = Vector2(-658, -390)
 shape = SubResource("CircleShape2D_te2od")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1767517182]
-position = Vector2(-660, -360)
-scale = Vector2(0.33713678, 0.35536748)
-texture = ExtResource("2_4v1pg")

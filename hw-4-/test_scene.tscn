@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_ia1lp")]
 position = Vector2(1019, 408)
+collision_mask = 2
 
 [node name="Collectable" parent="." unique_id=864278290 instance=ExtResource("2_sasra")]
 position = Vector2(1059, 867)
