@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dydbthduxbt72"]
+
+[ext_resource type="PackedScene" uid="uid://cvfa7cm6uo12s" path="res://Part B.tscn" id="1_ia1lp"]
+[ext_resource type="PackedScene" uid="uid://g4w6mc35ogqp" path="res://collectable.tscn" id="2_sasra"]
+
+[node name="Test Scene" type="Node2D" unique_id=516442545]
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_ia1lp")]
+position = Vector2(1019, 408)
+
+[node name="Collectable" parent="." unique_id=864278290 instance=ExtResource("2_sasra")]
+position = Vector2(1059, 867)
+
+[node name="Collectable2" parent="." unique_id=1773553263 instance=ExtResource("2_sasra")]
+position = Vector2(2029, 1195)
+
+[node name="Collectable3" parent="." unique_id=277476103 instance=ExtResource("2_sasra")]
+position = Vector2(2508, 581)
