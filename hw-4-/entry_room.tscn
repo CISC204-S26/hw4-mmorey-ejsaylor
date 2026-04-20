@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://btql1xnudw1x4"]
+
+[node name="EntryRoom" type="Node2D" unique_id=104480935]
+position = Vector2(62, 10)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1947509764]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.025840001, 0.025840001, 0.57123643, 1)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1923271858]
