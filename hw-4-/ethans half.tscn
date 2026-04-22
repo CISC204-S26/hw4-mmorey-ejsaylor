@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://708lflwcnuty"]
+
+[ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://player.gd" id="1_mtic0"]
+[ext_resource type="PackedScene" uid="uid://cj4yqg0qdtbsj" path="res://ethanpta.tscn" id="1_qrjo0"]
+[ext_resource type="Script" uid="uid://bp8qcn8qj0xeg" path="res://start_hint.gd" id="2_i67ot"]
+[ext_resource type="Script" uid="uid://c55dfsi4wlw6" path="res://oracle_area.gd" id="2_m2h4o"]
+[ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_mfiwf"]
+[ext_resource type="Script" uid="uid://f341arc7x5tg" path="res://oracle.gd" id="2_qwh87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vimr7"]
+size = Vector2(31.5, 656.20844)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24qf1"]
+size = Vector2(160, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrjo0"]
+size = Vector2(20, 280)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i67ot"]
+size = Vector2(596.5, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtic0"]
+size = Vector2(20, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfiwf"]
+size = Vector2(257, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4oapd"]
+size = Vector2(52, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwh87"]
+radius = 155.30217
+
+[node name="game" type="Node2D" unique_id=110340162]
+
+[node name="blocking" type="Node2D" parent="." unique_id=198526648]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blocking" unique_id=1905995962]
+position = Vector2(15.25, 319.89578)
+shape = SubResource("RectangleShape2D_vimr7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="blocking" unique_id=1999254951]
+position = Vector2(111, 638)
+shape = SubResource("RectangleShape2D_24qf1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="blocking/CollisionShape2D2" unique_id=947621710]
+position = Vector2(273, 1)
+shape = SubResource("RectangleShape2D_24qf1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="blocking" unique_id=971360747]
+position = Vector2(474, 509)
+shape = SubResource("RectangleShape2D_qrjo0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="blocking" unique_id=1670682121]
+position = Vector2(535.75, 358)
+shape = SubResource("RectangleShape2D_i67ot")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="blocking" unique_id=1592908029]
+position = Vector2(105, 703)
+shape = SubResource("RectangleShape2D_mtic0")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="blocking/CollisionShape2D5" unique_id=1409555357]
+position = Vector2(237, 1)
+shape = SubResource("RectangleShape2D_mtic0")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="blocking" unique_id=388084658]
+position = Vector2(223.5, 768)
+shape = SubResource("RectangleShape2D_mfiwf")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=190482934]
+script = ExtResource("1_mtic0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1932554035]
+position = Vector2(179, 728.5)
+shape = SubResource("RectangleShape2D_4oapd")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1363238649]
+position = Vector2(179.00002, 728.99994)
+scale = Vector2(0.39766917, 0.32682323)
+texture = ExtResource("2_mfiwf")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=945696869]
+position = Vector2(247, 707)
+scale = Vector2(-1.2095858, 0.072)
+
+[node name="SpeechBubble" type="Label" parent="player" unique_id=1094756352]
+visible = false
+offset_left = 309.0
+offset_top = 531.0
+offset_right = 349.0
+offset_bottom = 554.0
+scale = Vector2(1.6032939, 1.4136627)
+
+[node name="oracle" parent="." unique_id=1142748349 instance=ExtResource("1_qrjo0")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(424.99997, 558)
+rotation = 3.1415925
+scale = Vector2(0.44000077, -0.36000246)
+script = ExtResource("2_qwh87")
+
+[node name="OracleArea" type="Area2D" parent="oracle" unique_id=1652600137]
+script = ExtResource("2_m2h4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oracle/OracleArea" unique_id=113958758]
+position = Vector2(95.454315, 88.88828)
+shape = SubResource("CircleShape2D_qwh87")
+
+[node name="Start Hint" type="CanvasLayer" parent="." unique_id=1191514196]
+script = ExtResource("2_i67ot")
+
+[node name="Label" type="Label" parent="Start Hint" unique_id=360230343]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="oracle/OracleArea" to="oracle" method="_on_oracle_area_body_entered"]
+[connection signal="body_exited" from="oracle/OracleArea" to="oracle" method="_on_oracle_area_body_exited"]
