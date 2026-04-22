@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://btql1xnudw1x4"]
+
+[ext_resource type="PackedScene" uid="uid://cvfa7cm6uo12s" path="res://Scenes/Part B.tscn" id="1_s7rkl"]
+[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://interact_sign.tscn" id="2_cgv7t"]
+[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://door.tscn" id="3_x556d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgv7t"]
+size = Vector2(1280, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x556d"]
+size = Vector2(1280, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k73m4"]
+size = Vector2(97, 720)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi13c"]
+size = Vector2(100, 720)
+
+[node name="EntryRoom" type="Node2D" unique_id=104480935]
+position = Vector2(62, 10)
+
+[node name="Floor" type="ColorRect" parent="." unique_id=1947509764]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.025840001, 0.025840001, 0.57123643, 1)
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_s7rkl")]
+position = Vector2(640, 500)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1923271858]
+
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=614841932]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=889483523]
+position = Vector2(640, -45.5)
+shape = SubResource("RectangleShape2D_cgv7t")
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=915418363]
+position = Vector2(0, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=655337310]
+position = Vector2(640, 49)
+shape = SubResource("RectangleShape2D_x556d")
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=1544611219]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=25572161]
+position = Vector2(-48.5, 360)
+shape = SubResource("RectangleShape2D_k73m4")
+
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=516788728]
+position = Vector2(1280, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=773733777]
+position = Vector2(50, 360)
+shape = SubResource("RectangleShape2D_yi13c")
+
+[node name="SignControls" parent="." unique_id=4598555 instance=ExtResource("2_cgv7t")]
+position = Vector2(-18, 911)
+prompt_text = "Press E to read Controls"
+message_text = "Move with WASD. Press E to interact with objects."
+
+[node name="SignStory" parent="." unique_id=1186759387 instance=ExtResource("2_cgv7t")]
+position = Vector2(434, 919)
+prompt_text = "Press E to read note"
+message_text = ""
+
+[node name="Door" parent="." unique_id=97506012 instance=ExtResource("3_x556d")]
+position = Vector2(-60, 254)
+
+[node name="Door2" parent="." unique_id=1446754071 instance=ExtResource("3_x556d")]
+position = Vector2(1259, 266)

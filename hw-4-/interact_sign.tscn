@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c64hs6uar8ey6"]
+
+[ext_resource type="Script" uid="uid://bi3gowpx0mf0i" path="res://interact_sign.gd" id="1_eq1bj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnq4g"]
+size = Vector2(385, 245)
+
+[node name="InteractSign" type="Area2D" unique_id=4598555]
+script = ExtResource("1_eq1bj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1373449336]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783803912]
+position = Vector2(182.5, 112.5)
+shape = SubResource("RectangleShape2D_xnq4g")
