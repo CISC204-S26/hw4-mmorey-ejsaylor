@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ciploqoagvtqm"]
+
+[ext_resource type="Script" uid="uid://cnqs5s8i7hn3v" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://c6prep76pyo1e" path="res://Art/godot_door_asset_transparent.png" id="2_0phs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
+size = Vector2(72, 204)
+
+[node name="Door" type="Area2D" unique_id=97506012]
+script = ExtResource("1_v6xrn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1236572111]
+position = Vector2(40.000008, 107.5)
+scale = Vector2(0.19531251, 0.29296875)
+texture = ExtResource("2_0phs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114394024]
+position = Vector2(40, 109)
+shape = SubResource("RectangleShape2D_50cdl")
