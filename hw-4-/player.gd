@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 
+@onready var sprite = $Sprite2D
+
 func _physics_process(_delta):
 	var direction = Vector2.ZERO
 
@@ -16,3 +18,9 @@ func _physics_process(_delta):
 
 	velocity = direction * speed
 	move_and_slide()
+
+
+func take_damage():
+	sprite.modulate = Color(1, 0, 0) # flash red
+	await get_tree().create_timer(0.2).timeout
+	sprite.modulate = Color(1, 1, 1) # back to normal

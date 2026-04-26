@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://708lflwcnuty"]
 
 [ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://player.gd" id="1_mtic0"]
-[ext_resource type="PackedScene" uid="uid://cj4yqg0qdtbsj" path="res://ethanpta.tscn" id="1_qrjo0"]
+[ext_resource type="PackedScene" uid="uid://ddcwf0fd58i36" path="res://ethanpta.tscn" id="1_qrjo0"]
 [ext_resource type="Script" uid="uid://bp8qcn8qj0xeg" path="res://start_hint.gd" id="2_i67ot"]
 [ext_resource type="Script" uid="uid://c55dfsi4wlw6" path="res://oracle_area.gd" id="2_m2h4o"]
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_mfiwf"]
@@ -80,8 +80,8 @@ scale = Vector2(0.39766917, 0.32682323)
 texture = ExtResource("2_mfiwf")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=945696869]
-position = Vector2(247, 707)
-scale = Vector2(-1.2095858, 0.072)
+position = Vector2(590, 503.00006)
+scale = Vector2(-0.641349, 0.04601861)
 
 [node name="SpeechBubble" type="Label" parent="player" unique_id=1094756352]
 visible = false
@@ -109,8 +109,11 @@ shape = SubResource("CircleShape2D_qwh87")
 script = ExtResource("2_i67ot")
 
 [node name="Label" type="Label" parent="Start Hint" unique_id=360230343]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 95.0
+offset_top = 786.0
+offset_right = 208.0
+offset_bottom = 809.0
+text = "find the oracle"
 
 [connection signal="body_entered" from="oracle/OracleArea" to="oracle" method="_on_oracle_area_body_entered"]
 [connection signal="body_exited" from="oracle/OracleArea" to="oracle" method="_on_oracle_area_body_exited"]
