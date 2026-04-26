@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://btql1xnudw1x4"]
 
-[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://interact_sign.tscn" id="2_cgv7t"]
+[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://Scenes/interact_sign.tscn" id="2_cgv7t"]
 [ext_resource type="Texture2D" uid="uid://cn25n2etgy2tn" path="res://Art/entry_controls_sign.png" id="3_anog1"]
-[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://door.tscn" id="3_x556d"]
+[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://Scenes/door.tscn" id="3_x556d"]
 [ext_resource type="Texture2D" uid="uid://bidwe1e3du5jx" path="res://Art/entry_story_sign.png" id="4_jhr5r"]
-[ext_resource type="PackedScene" uid="uid://ni067hwqru3b" path="res://final_door_panel.tscn" id="4_k73m4"]
+[ext_resource type="PackedScene" uid="uid://ni067hwqru3b" path="res://Scenes/final_door_panel.tscn" id="4_k73m4"]
 [ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="6_anog1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgv7t"]

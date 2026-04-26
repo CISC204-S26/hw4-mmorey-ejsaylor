@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2kty7peb5dfr"]
 
-[ext_resource type="Script" uid="uid://6n6sy05jqn2a" path="res://Scenes/fuse_box.gd" id="1_gojlo"]
+[ext_resource type="Script" uid="uid://6n6sy05jqn2a" path="res://Scripts/fuse_box.gd" id="1_gojlo"]
 [ext_resource type="Texture2D" uid="uid://x658nuo4pche" path="res://Art/fuse_box.png" id="1_uwvrc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gojlo"]

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://5uypg1nx8upi"]
 
-[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="1_gc17a"]
-[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://interact_sign.tscn" id="2_gc17a"]
-[ext_resource type="PackedScene" uid="uid://h1ytsears2wi" path="res://Scenes/fuse_pickup.tscn" id="3_7ro1u"]
-[ext_resource type="Texture2D" uid="uid://cf0vhks0p3p3b" path="res://Art/generator_note.png" id="3_vvxsb"]
-[ext_resource type="PackedScene" uid="uid://d2kty7peb5dfr" path="res://Scenes/fuse_box.tscn" id="4_vvxsb"]
-[ext_resource type="PackedScene" uid="uid://dfnv753cogl7n" path="res://Scenes/generator_lever.tscn" id="6_ywonl"]
-[ext_resource type="Texture2D" uid="uid://drkag6nldh26v" path="res://Art/broken_pipe.png" id="7_ol7t7"]
-[ext_resource type="Texture2D" uid="uid://c85kqedm5kqmo" path="res://Art/tool_crate.png" id="8_c0j23"]
-[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://door.tscn" id="9_mnixd"]
+[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="1_c6mtq"]
+[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://Scenes/interact_sign.tscn" id="2_xn5mg"]
+[ext_resource type="Texture2D" uid="uid://cf0vhks0p3p3b" path="res://Art/generator_note.png" id="3_etqme"]
+[ext_resource type="PackedScene" uid="uid://h1ytsears2wi" path="res://Scenes/fuse_pickup.tscn" id="4_bu6t0"]
+[ext_resource type="PackedScene" uid="uid://d2kty7peb5dfr" path="res://Scenes/fuse_box.tscn" id="5_demri"]
+[ext_resource type="PackedScene" uid="uid://dfnv753cogl7n" path="res://Scenes/generator_lever.tscn" id="6_or1bo"]
+[ext_resource type="Texture2D" uid="uid://drkag6nldh26v" path="res://Art/broken_pipe.png" id="7_mcfmg"]
+[ext_resource type="Texture2D" uid="uid://c85kqedm5kqmo" path="res://Art/tool_crate.png" id="8_mpnnf"]
+[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://Scenes/door.tscn" id="9_v28ii"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gc17a"]
 size = Vector2(1500, 169)
@@ -29,7 +29,7 @@ offset_right = 1500.0
 offset_bottom = 1500.0
 color = Color(0.2091254, 0.12245969, 6.016344e-08, 1)
 
-[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_gc17a")]
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_c6mtq")]
 position = Vector2(127, 101)
 
 [node name="Walls" type="Node2D" parent="." unique_id=139144868]
@@ -60,7 +60,7 @@ position = Vector2(1504, 7)
 position = Vector2(92, 743)
 shape = SubResource("RectangleShape2D_vvxsb")
 
-[node name="GenoratorNote" parent="." unique_id=4598555 instance=ExtResource("2_gc17a")]
+[node name="GenoratorNote" parent="." unique_id=4598555 instance=ExtResource("2_xn5mg")]
 position = Vector2(404, 25)
 scale = Vector2(0.75, 0.75)
 prompt_text = "Press E to read warning"
@@ -69,19 +69,19 @@ message_text = "Warning: The genorator is offline. Fuse is missing. Restore Fuse
 [node name="Sprite2D2" type="Sprite2D" parent="GenoratorNote" unique_id=316390637]
 position = Vector2(123, 124)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_vvxsb")
+texture = ExtResource("3_etqme")
 
-[node name="FusePickup" parent="." unique_id=1679278144 instance=ExtResource("3_7ro1u")]
+[node name="FusePickup" parent="." unique_id=1679278144 instance=ExtResource("4_bu6t0")]
 position = Vector2(1225, 1470)
 
-[node name="FuseBox" parent="." unique_id=1394179817 instance=ExtResource("4_vvxsb")]
+[node name="FuseBox" parent="." unique_id=1394179817 instance=ExtResource("5_demri")]
 position = Vector2(41, 775)
 rotation = -1.5707964
 
-[node name="GeneratorLever" parent="." unique_id=1244877836 instance=ExtResource("6_ywonl")]
+[node name="GeneratorLever" parent="." unique_id=1244877836 instance=ExtResource("6_or1bo")]
 position = Vector2(1148, 1421)
 
-[node name="BrokenPipe" parent="." unique_id=1096396690 instance=ExtResource("2_gc17a")]
+[node name="BrokenPipe" parent="." unique_id=1096396690 instance=ExtResource("2_xn5mg")]
 position = Vector2(1492, 270)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
@@ -89,9 +89,9 @@ message_text = "The Pipe is cracked but not important to leave."
 
 [node name="Sprite2D2" type="Sprite2D" parent="BrokenPipe" unique_id=857269867]
 position = Vector2(176, 114)
-texture = ExtResource("7_ol7t7")
+texture = ExtResource("7_mcfmg")
 
-[node name="ToolCrate" parent="." unique_id=2074188546 instance=ExtResource("2_gc17a")]
+[node name="ToolCrate" parent="." unique_id=2074188546 groups=["player"] instance=ExtResource("2_xn5mg")]
 position = Vector2(572, 1491)
 rotation = 3.1415927
 scale = Vector2(0.75, 0.75)
@@ -99,8 +99,8 @@ message_text = "Nothing useful in here."
 
 [node name="Sprite2D2" type="Sprite2D" parent="ToolCrate" unique_id=85799503]
 position = Vector2(179, 94)
-texture = ExtResource("8_c0j23")
+texture = ExtResource("8_mpnnf")
 
-[node name="DoorBackEntry" parent="." unique_id=97506012 instance=ExtResource("9_mnixd")]
+[node name="DoorBackEntry" parent="." unique_id=97506012 instance=ExtResource("9_v28ii")]
 position = Vector2(1417, 812)
 target_scene = "uid://btql1xnudw1x4"

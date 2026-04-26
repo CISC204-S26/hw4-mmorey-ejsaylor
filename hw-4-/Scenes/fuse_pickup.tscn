@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h1ytsears2wi"]
 
-[ext_resource type="Script" uid="uid://b1rrsec48kxph" path="res://Scenes/fuse_pickup.gd" id="1_qbakd"]
+[ext_resource type="Script" uid="uid://b1rrsec48kxph" path="res://Scripts/fuse_pickup.gd" id="1_qbakd"]
 [ext_resource type="Texture2D" uid="uid://dc2yervls4id0" path="res://Art/fuse_pickup.png" id="2_m7c2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhubc"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ni067hwqru3b"]
 
 [ext_resource type="Texture2D" uid="uid://c6prep76pyo1e" path="res://Art/godot_door_asset_transparent.png" id="1_475fn"]
-[ext_resource type="Script" uid="uid://cbvmxgg6kw5gd" path="res://final_door_panel.gd" id="1_isv0l"]
+[ext_resource type="Script" uid="uid://cbvmxgg6kw5gd" path="res://Scripts/final_door_panel.gd" id="1_isv0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isv0l"]
 size = Vector2(91.25, 176.875)
