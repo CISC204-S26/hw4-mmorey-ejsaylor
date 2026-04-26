@@ -1,11 +1,18 @@
-[gd_scene format=3 uid="uid://708lflwcnuty"]
+[gd_scene format=3 uid="uid://clye6yblqtydk"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://player.gd" id="1_mtic0"]
 [ext_resource type="PackedScene" uid="uid://ddcwf0fd58i36" path="res://ethanpta.tscn" id="1_qrjo0"]
 [ext_resource type="Script" uid="uid://bp8qcn8qj0xeg" path="res://start_hint.gd" id="2_i67ot"]
 [ext_resource type="Script" uid="uid://c55dfsi4wlw6" path="res://oracle_area.gd" id="2_m2h4o"]
+=======
+[ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://Scripts/player.gd" id="1_mtic0"]
+[ext_resource type="PackedScene" uid="uid://cj4yqg0qdtbsj" path="res://Scenes/ethanpta.tscn" id="1_qrjo0"]
+[ext_resource type="Script" path="res://start_hint.gd" id="2_i67ot"]
+[ext_resource type="Script" path="res://oracle_area.gd" id="2_m2h4o"]
+>>>>>>> ae5625744c021f0bddd5fed89ada104639a5eb78
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_mfiwf"]
-[ext_resource type="Script" uid="uid://f341arc7x5tg" path="res://oracle.gd" id="2_qwh87"]
+[ext_resource type="Script" path="res://oracle.gd" id="2_qwh87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vimr7"]
 size = Vector2(31.5, 656.20844)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2kty7peb5dfr"]
+
+[ext_resource type="Script" uid="uid://6n6sy05jqn2a" path="res://Scenes/fuse_box.gd" id="1_gojlo"]
+[ext_resource type="Texture2D" uid="uid://x658nuo4pche" path="res://Art/fuse_box.png" id="1_uwvrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gojlo"]
+size = Vector2(146, 181)
+
+[node name="FuseBox" type="Area2D" unique_id=1394179817]
+script = ExtResource("1_gojlo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1090670365]
+position = Vector2(77, 50)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_uwvrc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158244624]
+position = Vector2(77, 49.5)
+shape = SubResource("RectangleShape2D_gojlo")

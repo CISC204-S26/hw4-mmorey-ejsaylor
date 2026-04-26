@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://h1ytsears2wi"]
+
+[ext_resource type="Script" uid="uid://b1rrsec48kxph" path="res://Scenes/fuse_pickup.gd" id="1_qbakd"]
+[ext_resource type="Texture2D" uid="uid://dc2yervls4id0" path="res://Art/fuse_pickup.png" id="2_m7c2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhubc"]
+size = Vector2(56, 14)
+
+[node name="FusePickup" type="Area2D" unique_id=1679278144]
+script = ExtResource("1_qbakd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=417744038]
+position = Vector2(228, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_m7c2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=690793387]
+position = Vector2(228, 0)
+shape = SubResource("RectangleShape2D_vhubc")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ciploqoagvtqm"]
 
-[ext_resource type="Script" uid="uid://cnqs5s8i7hn3v" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Script" uid="uid://cnqs5s8i7hn3v" path="res://Scripts/door.gd" id="1_v6xrn"]
 [ext_resource type="Texture2D" uid="uid://c6prep76pyo1e" path="res://Art/godot_door_asset_transparent.png" id="2_0phs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50cdl"]
