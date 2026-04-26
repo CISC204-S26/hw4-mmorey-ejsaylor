@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://btql1xnudw1x4"]
 
-[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://Scenes/interact_sign.tscn" id="2_cgv7t"]
+[ext_resource type="PackedScene" path="res://Scenes/interact_sign.tscn" id="2_cgv7t"]
 [ext_resource type="Texture2D" uid="uid://cn25n2etgy2tn" path="res://Art/entry_controls_sign.png" id="3_anog1"]
-[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://Scenes/door.tscn" id="3_x556d"]
+[ext_resource type="PackedScene" path="res://Scenes/door.tscn" id="3_x556d"]
 [ext_resource type="Texture2D" uid="uid://bidwe1e3du5jx" path="res://Art/entry_story_sign.png" id="4_jhr5r"]
-[ext_resource type="PackedScene" uid="uid://ni067hwqru3b" path="res://Scenes/final_door_panel.tscn" id="4_k73m4"]
-[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="6_anog1"]
+[ext_resource type="PackedScene" path="res://Scenes/final_door_panel.tscn" id="4_k73m4"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="6_anog1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgv7t"]
 size = Vector2(1280, 91)
@@ -83,6 +83,7 @@ target_scene = "uid://5uypg1nx8upi"
 
 [node name="Door2" parent="." unique_id=1446754071 instance=ExtResource("3_x556d")]
 position = Vector2(1206, 276)
+target_scene = "uid://cbgnxlij38int"
 
 [node name="FinalDoorPanel" parent="." unique_id=63635465 instance=ExtResource("4_k73m4")]
 position = Vector2(450, -268)
