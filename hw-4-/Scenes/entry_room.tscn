@@ -70,7 +70,8 @@ texture = ExtResource("3_anog1")
 position = Vector2(825, 558)
 scale = Vector2(0.75, 0.75)
 prompt_text = "Press E to read note"
-message_text = ""
+message_text = "You're deep in space and suddenly struck by space pirates.
+ You need to restore the generator and fight off the enemies to get to the helm and fly away."
 
 [node name="Sprite2D2" type="Sprite2D" parent="SignStory" unique_id=1815448498]
 position = Vector2(187, 117)
