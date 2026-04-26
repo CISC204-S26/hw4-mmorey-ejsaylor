@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ni067hwqru3b"]
+
+[ext_resource type="Texture2D" uid="uid://c6prep76pyo1e" path="res://Art/godot_door_asset_transparent.png" id="1_475fn"]
+[ext_resource type="Script" uid="uid://cbvmxgg6kw5gd" path="res://final_door_panel.gd" id="1_isv0l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isv0l"]
+size = Vector2(91.25, 176.875)
+
+[node name="FinalDoorPanel" type="Area2D" unique_id=63635465]
+script = ExtResource("1_isv0l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1213080457]
+position = Vector2(195, 322)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_475fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081778347]
+position = Vector2(195.375, 324.5625)
+shape = SubResource("RectangleShape2D_isv0l")

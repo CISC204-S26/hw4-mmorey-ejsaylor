@@ -33,5 +33,7 @@ shape = SubResource("CircleShape2D_o6t7m")
 [node name="Interactables" type="Area2D" parent="InteractionArea" unique_id=9592748]
 script = ExtResource("3_fdmr7")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=83683347]
+
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]

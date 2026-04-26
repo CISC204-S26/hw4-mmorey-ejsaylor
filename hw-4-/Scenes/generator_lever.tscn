@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfnv753cogl7n"]
+
+[ext_resource type="Texture2D" uid="uid://bxjr6nrug83l6" path="res://Art/generator_lever.png" id="1_mpl5a"]
+[ext_resource type="Script" uid="uid://biaf2dx7x4gex" path="res://Scenes/generator_lever.gd" id="1_o3alk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3alk"]
+size = Vector2(54, 81)
+
+[node name="GeneratorLever" type="Area2D" unique_id=1244877836]
+script = ExtResource("1_o3alk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1688783818]
+position = Vector2(106, 29)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_mpl5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=733231276]
+position = Vector2(106, 29.5)
+shape = SubResource("RectangleShape2D_o3alk")

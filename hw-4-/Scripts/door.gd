@@ -7,4 +7,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player") and target_scene != "":
-		get_tree().change_scene_to_file(target_scene)
+		call_deferred("go_to_scene")
+
+func go_to_scene() -> void:
+	get_tree().change_scene_to_file(target_scene)

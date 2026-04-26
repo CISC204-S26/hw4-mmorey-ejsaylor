@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://btql1xnudw1x4"]
 
-[ext_resource type="PackedScene" uid="uid://cvfa7cm6uo12s" path="res://Scenes/Part B.tscn" id="1_s7rkl"]
 [ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://interact_sign.tscn" id="2_cgv7t"]
+[ext_resource type="Texture2D" uid="uid://cn25n2etgy2tn" path="res://Art/entry_controls_sign.png" id="3_anog1"]
 [ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://door.tscn" id="3_x556d"]
+[ext_resource type="Texture2D" uid="uid://bidwe1e3du5jx" path="res://Art/entry_story_sign.png" id="4_jhr5r"]
+[ext_resource type="PackedScene" uid="uid://ni067hwqru3b" path="res://final_door_panel.tscn" id="4_k73m4"]
+[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="6_anog1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgv7t"]
 size = Vector2(1280, 91)
@@ -23,9 +26,6 @@ position = Vector2(62, 10)
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.025840001, 0.025840001, 0.57123643, 1)
-
-[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_s7rkl")]
-position = Vector2(640, 500)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1923271858]
 
@@ -56,17 +56,36 @@ position = Vector2(50, 360)
 shape = SubResource("RectangleShape2D_yi13c")
 
 [node name="SignControls" parent="." unique_id=4598555 instance=ExtResource("2_cgv7t")]
-position = Vector2(-18, 911)
+position = Vector2(162, 570.00006)
+scale = Vector2(0.75, 0.75)
 prompt_text = "Press E to read Controls"
 message_text = "Move with WASD. Press E to interact with objects."
 
+[node name="Sprite2D2" type="Sprite2D" parent="SignControls" unique_id=17895238]
+position = Vector2(179, 112)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_anog1")
+
 [node name="SignStory" parent="." unique_id=1186759387 instance=ExtResource("2_cgv7t")]
-position = Vector2(434, 919)
+position = Vector2(825, 558)
+scale = Vector2(0.75, 0.75)
 prompt_text = "Press E to read note"
 message_text = ""
 
+[node name="Sprite2D2" type="Sprite2D" parent="SignStory" unique_id=1815448498]
+position = Vector2(187, 117)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_jhr5r")
+
 [node name="Door" parent="." unique_id=97506012 instance=ExtResource("3_x556d")]
-position = Vector2(-60, 254)
+position = Vector2(-3, 257)
+target_scene = "uid://5uypg1nx8upi"
 
 [node name="Door2" parent="." unique_id=1446754071 instance=ExtResource("3_x556d")]
-position = Vector2(1259, 266)
+position = Vector2(1206, 276)
+
+[node name="FinalDoorPanel" parent="." unique_id=63635465 instance=ExtResource("4_k73m4")]
+position = Vector2(450, -268)
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("6_anog1")]
+position = Vector2(599, 410)
