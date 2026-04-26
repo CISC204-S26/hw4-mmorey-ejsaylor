@@ -3,16 +3,10 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @onready var sprite = $Sprite2D
 
-var current_interactable: Node = null
-var prompt_label: Label = null
-
 func _ready() -> void:
-	prompt_label = get_node_or_null("CanvasLayer/Label")
-	
-	if prompt_label != null:
-		prompt_label.text = ""
-		
-func _physics_process(_delta):
+	add_to_group("player")
+
+func _physics_process(_delta: float) -> void:
 	var direction = Vector2.ZERO
 
 	if Input.is_key_pressed(KEY_A):
@@ -24,31 +18,14 @@ func _physics_process(_delta):
 	if Input.is_key_pressed(KEY_S):
 		direction.y += 1
 
-	velocity = direction * speed
+	velocity = direction.normalized() * speed
 	move_and_slide()
 
-	if Input.is_action_just_pressed("interact") and current_interactable != null:
-		if current_interactable.has_method("interact"):
-			current_interactable.interact()
-
-func set_interactable(target: Node, prompt_text: String) -> void:
-	current_interactable = target
-	
-	if prompt_label != null:
-		prompt_label.text = prompt_text
-		
-func show_message(text: String) -> void:
-	if prompt_label != null:
-		prompt_label.text = text
-
-func clear_interactable(target: Node) -> void:
-	if current_interactable == target:
-		current_interactable = null
-		
-		if prompt_label != null:
-			prompt_label.text = ""
-			
-func take_damage():
-	sprite.modulate = Color(1, 0, 0) # flash red
+func take_damage() -> void:
+	sprite.modulate = Color(1, 0, 0)
 	await get_tree().create_timer(0.2).timeout
-	sprite.modulate = Color(1, 1, 1) # back to normal
+	sprite.modulate = Color(1, 1, 1)
+
+func _on_hitbox_body_entered(body: Node) -> void:
+	if body.is_in_group("enemy"):
+		take_damage()
