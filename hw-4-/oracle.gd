@@ -17,7 +17,7 @@ func _ready():
 	bubble.visible = false
 
 func _process(_delta):
-	if player_inside and Input.is_action_just_pressed("Interact"):
+	if player_inside and Input.is_action_just_pressed("interact"):
 		if not talking:
 			start_dialogue()
 		else:
