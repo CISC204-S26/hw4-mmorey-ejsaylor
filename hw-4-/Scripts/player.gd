@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @onready var sprite = $Sprite2D
 
+var current_interactable: Node = null
+var prompt_label: Label = null
+
 func _ready() -> void:
 	add_to_group("player")
 
@@ -29,3 +32,20 @@ func take_damage() -> void:
 func _on_hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("enemy"):
 		take_damage()
+
+func set_interactable(target: Node, prompt_text: String) -> void:
+	current_interactable = target
+	
+	if prompt_label != null:
+		prompt_label.text = prompt_text
+
+func clear_interactable(target: Node) -> void:
+	if current_interactable == target:
+		current_interactable = null
+		
+		if prompt_label != null:
+			prompt_label.text = ""
+
+func show_message(text: String) -> void:
+	if prompt_label != null:
+		prompt_label.text = text
