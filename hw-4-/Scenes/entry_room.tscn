@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn25n2etgy2tn" path="res://Art/entry_controls_sign.png" id="3_anog1"]
 [ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://Scenes/door.tscn" id="3_x556d"]
 [ext_resource type="Texture2D" uid="uid://bidwe1e3du5jx" path="res://Art/entry_story_sign.png" id="4_jhr5r"]
-[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="6_anog1"]
+[ext_resource type="PackedScene" uid="uid://ded3ju7w5wu5n" path="res://Scenes/player.tscn" id="6_anog1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgv7t"]
 size = Vector2(1280, 91)
@@ -25,6 +25,9 @@ position = Vector2(62, 10)
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.025840001, 0.025840001, 0.57123643, 1)
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("6_anog1")]
+position = Vector2(599, 410)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1923271858]
 
@@ -85,5 +88,6 @@ target_scene = "uid://5uypg1nx8upi"
 position = Vector2(1206, 276)
 target_scene = "uid://cbgnxlij38int"
 
-[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("6_anog1")]
-position = Vector2(599, 410)
+[node name="Door3" parent="." unique_id=2047998976 instance=ExtResource("3_x556d")]
+position = Vector2(592, -44)
+target_scene = "uid://2ns2qpe3ojm6"
