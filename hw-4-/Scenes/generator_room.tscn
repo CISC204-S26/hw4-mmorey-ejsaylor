@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dw68tk1t04cl5"]
+
+[ext_resource type="PackedScene" uid="uid://dn4gyxa1kfrpe" path="res://Scenes/player.tscn" id="1_vxwg8"]
+[ext_resource type="PackedScene" uid="uid://c64hs6uar8ey6" path="res://Scenes/interact_sign.tscn" id="2_cggv2"]
+[ext_resource type="Texture2D" uid="uid://cf0vhks0p3p3b" path="res://Art/generator_note.png" id="3_qbxr6"]
+[ext_resource type="PackedScene" uid="uid://h1ytsears2wi" path="res://Scenes/fuse_pickup.tscn" id="4_xr0pd"]
+[ext_resource type="PackedScene" uid="uid://d2kty7peb5dfr" path="res://Scenes/fuse_box.tscn" id="5_x46jq"]
+[ext_resource type="PackedScene" uid="uid://dfnv753cogl7n" path="res://Scenes/generator_lever.tscn" id="6_25uhe"]
+[ext_resource type="Texture2D" uid="uid://drkag6nldh26v" path="res://Art/broken_pipe.png" id="7_p20pa"]
+[ext_resource type="Texture2D" uid="uid://c85kqedm5kqmo" path="res://Art/tool_crate.png" id="8_14gfv"]
+[ext_resource type="PackedScene" uid="uid://ciploqoagvtqm" path="res://Scenes/door.tscn" id="9_r46a0"]
+[ext_resource type="PackedScene" uid="uid://uxb5e5noclhh" path="res://Scenes/generator_machine.tscn" id="10_cggv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc17a"]
+size = Vector2(1500, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krtrc"]
+size = Vector2(1500, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ro1u"]
+size = Vector2(146, 1500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvxsb"]
+size = Vector2(192, 1500)
+
+[node name="GeneratorRoom" type="Node2D" unique_id=341365540]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=712694392]
+offset_right = 1500.0
+offset_bottom = 1500.0
+color = Color(0.2091254, 0.12245969, 6.016344e-08, 1)
+
+[node name="Walls" type="Node2D" parent="." unique_id=139144868]
+
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=1034650643]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=127047259]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_gc17a")
+
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=754616097]
+position = Vector2(0, 1500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=262579268]
+position = Vector2(750, 63)
+shape = SubResource("RectangleShape2D_krtrc")
+
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=625453374]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=1190382005]
+position = Vector2(-73, 750)
+shape = SubResource("RectangleShape2D_7ro1u")
+
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=1301003854]
+position = Vector2(1504, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1374791273]
+position = Vector2(92, 743)
+shape = SubResource("RectangleShape2D_vvxsb")
+
+[node name="GeneratorNote" parent="." unique_id=4598555 instance=ExtResource("2_cggv2")]
+position = Vector2(404, 25)
+scale = Vector2(0.75, 0.75)
+prompt_text = "Press E to read warning"
+message_text = "Warning: The genorator is offline. Fuse is missing. Restore Fuse to unlock power lever."
+
+[node name="Sprite2D2" type="Sprite2D" parent="GeneratorNote" unique_id=316390637]
+position = Vector2(123, 124)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_qbxr6")
+
+[node name="FusePickup" parent="." unique_id=1679278144 instance=ExtResource("4_xr0pd")]
+position = Vector2(1225, 1470)
+
+[node name="FuseBox" parent="." unique_id=1394179817 instance=ExtResource("5_x46jq")]
+position = Vector2(41, 775)
+rotation = -1.5707964
+
+[node name="GeneratorLever" parent="." unique_id=1244877836 instance=ExtResource("6_25uhe")]
+position = Vector2(1148, 1421)
+
+[node name="BrokenPipe" parent="." unique_id=1096396690 instance=ExtResource("2_cggv2")]
+position = Vector2(1492, 270)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+message_text = "The Pipe is cracked but not important to leave."
+
+[node name="Sprite2D2" type="Sprite2D" parent="BrokenPipe" unique_id=857269867]
+position = Vector2(176, 114)
+texture = ExtResource("7_p20pa")
+
+[node name="ToolCrate" parent="." unique_id=2074188546 groups=["player"] instance=ExtResource("2_cggv2")]
+position = Vector2(572, 1491)
+rotation = 3.1415927
+scale = Vector2(0.75, 0.75)
+message_text = "Nothing useful in here."
+
+[node name="Sprite2D2" type="Sprite2D" parent="ToolCrate" unique_id=85799503]
+position = Vector2(179, 94)
+texture = ExtResource("8_14gfv")
+
+[node name="DoorBackEntry" parent="." unique_id=97506012 instance=ExtResource("9_r46a0")]
+position = Vector2(1417, 812)
+target_scene = "uid://btql1xnudw1x4"
+
+[node name="GeneratorMachine" parent="." unique_id=1915585199 instance=ExtResource("10_cggv2")]
+position = Vector2(67, 1139)
+rotation = -1.5707964
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_vxwg8")]

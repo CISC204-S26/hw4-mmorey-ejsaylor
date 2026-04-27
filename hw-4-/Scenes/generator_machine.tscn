@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://uxb5e5noclhh"]
+
+[ext_resource type="Texture2D" uid="uid://b8tpcryfnq2k3" path="res://Art/interactable_generator_machine.png" id="1_drvy8"]
+[ext_resource type="Script" uid="uid://c0ldbha1jcnjr" path="res://Scenes/generator_machine.gd" id="1_qxxnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxxnx"]
+size = Vector2(263, 132)
+
+[node name="GeneratorMachine" type="Area2D" unique_id=1915585199]
+script = ExtResource("1_qxxnx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=946284008]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_drvy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1171187327]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_qxxnx")
