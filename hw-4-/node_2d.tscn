@@ -214,8 +214,9 @@ scale = Vector2(0.11931109, 0.1477953)
 polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)
 
 [node name="Locked Door" parent="." unique_id=97506012 instance=ExtResource("5_kdubu")]
-position = Vector2(8, -614)
+position = Vector2(10, -616)
 script = ExtResource("6_d21ai")
+target_scene = "uid://btql1xnudw1x4"
 locked_text = "Key needed"
 open_text = "Press E to enter"
 

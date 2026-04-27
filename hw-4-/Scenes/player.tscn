@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvxtd4y0kr27y" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_vgqql"]
-[ext_resource type="Script" path="res://Scenes/message_label.gd" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://bvw1sj7oxcb0d" path="res://Scenes/message_label.gd" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls5h2"]
 size = Vector2(119, 120)
@@ -22,7 +22,7 @@ shape = SubResource("RectangleShape2D_ls5h2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1029947797]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1187439556]
+[node name="MessageLabel" type="Label" parent="CanvasLayer" unique_id=1187439556]
 offset_left = 14.0
 offset_top = 189.0
 offset_right = 94.0
