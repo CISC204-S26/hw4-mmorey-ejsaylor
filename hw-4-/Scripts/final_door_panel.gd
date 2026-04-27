@@ -18,5 +18,5 @@ func _on_body_exited(body: Node) -> void:
 		body.clear_interactable(self)
 		player_in_range = null
 
-func Interact() -> void:
+func interact() -> void:
 	print("The exit door is locked. I need to restore both side rooms first.")

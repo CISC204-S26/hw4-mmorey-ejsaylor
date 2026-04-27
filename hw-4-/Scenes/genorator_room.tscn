@@ -22,7 +22,7 @@ size = Vector2(146, 1500)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvxsb"]
 size = Vector2(192, 1500)
 
-[node name="GenoratorRoom" type="Node2D" unique_id=341365540]
+[node name="GeneratorRoom" type="Node2D" unique_id=341365540]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=712694392]
 offset_right = 1500.0
@@ -60,13 +60,13 @@ position = Vector2(1504, 7)
 position = Vector2(92, 743)
 shape = SubResource("RectangleShape2D_vvxsb")
 
-[node name="GenoratorNote" parent="." unique_id=4598555 instance=ExtResource("2_xn5mg")]
+[node name="GeneratorNote" parent="." unique_id=4598555 instance=ExtResource("2_xn5mg")]
 position = Vector2(404, 25)
 scale = Vector2(0.75, 0.75)
 prompt_text = "Press E to read warning"
 message_text = "Warning: The genorator is offline. Fuse is missing. Restore Fuse to unlock power lever."
 
-[node name="Sprite2D2" type="Sprite2D" parent="GenoratorNote" unique_id=316390637]
+[node name="Sprite2D2" type="Sprite2D" parent="GeneratorNote" unique_id=316390637]
 position = Vector2(123, 124)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_etqme")
