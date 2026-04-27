@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cfavjdo2at68g"]
 
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://ded3ju7w5wu5n" path="res://Scenes/player.tscn" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://bwpcoyhcqg7uh" path="res://key.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://odh7xb7tdxnk" path="res://Scenes/key.png" id="3_0hol4"]
+[ext_resource type="Script" uid="uid://2fs0jhdw55hh" path="res://fake_key.gd" id="4_0hol4"]
+[ext_resource type="PackedScene" path="res://Scenes/door.tscn" id="5_kdubu"]
+[ext_resource type="Script" uid="uid://68p8ym4n5ucj" path="res://Scenes/locked_door.gd" id="6_d21ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(1500, 169)
@@ -17,42 +22,215 @@ size = Vector2(192, 1500)
 [node name="maze" type="Node2D" unique_id=1559195736]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1384799596]
-offset_left = 15.0
-offset_top = 23.0
+offset_left = 14.999999
+offset_top = -728.0
 offset_right = 1515.0
-offset_bottom = 1523.0
-scale = Vector2(0.99812317, 1.0027971)
+offset_bottom = 772.0
+scale = Vector2(0.99812317, 1.5207891)
 color = Color(0, 0, 0.29128972, 1)
 
-[node name="Player" parent="ColorRect" unique_id=2129770638 instance=ExtResource("1_wtcfe")]
-position = Vector2(112.21061, 1383.1312)
-scale = Vector2(1.0018804, 0.9972107)
+[node name="Walls" type="Node2D" parent="." unique_id=626131088]
+position = Vector2(13.999999, 22)
+scale = Vector2(0.99812317, 1.0027971)
 
-[node name="Walls" type="Node2D" parent="ColorRect" unique_id=626131088]
-position = Vector2(-1.0018816, -0.99721146)
+[node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=1422094001]
+position = Vector2(9.554676e-07, -760.8717)
 
-[node name="WallTop" type="StaticBody2D" parent="ColorRect/Walls" unique_id=1422094001]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Walls/WallTop" unique_id=655601435]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallTop" unique_id=655601435]
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
-[node name="WallBottom" type="StaticBody2D" parent="ColorRect/Walls" unique_id=1596141401]
+[node name="WallBottom" type="StaticBody2D" parent="Walls" unique_id=1596141401]
 position = Vector2(0, 1500)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Walls/WallBottom" unique_id=197204679]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallBottom" unique_id=197204679]
 position = Vector2(750, 63)
 shape = SubResource("RectangleShape2D_epypp")
 
-[node name="WallLeft" type="StaticBody2D" parent="ColorRect/Walls" unique_id=1559011996]
+[node name="WallLeft" type="StaticBody2D" parent="Walls" unique_id=1559011996]
+position = Vector2(9.554675e-07, -744.91644)
+scale = Vector2(1, 1.4895194)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Walls/WallLeft" unique_id=1342937188]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallLeft" unique_id=1342937188]
 position = Vector2(-73, 750)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="WallRight" type="StaticBody2D" parent="ColorRect/Walls" unique_id=822130720]
-position = Vector2(1504, 7)
+[node name="WallRight" type="StaticBody2D" parent="Walls" unique_id=822130720]
+position = Vector2(1503.8224, -733.9471)
+scale = Vector2(1, 1.495498)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Walls/WallRight" unique_id=1881292448]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/WallRight" unique_id=1881292448]
 position = Vector2(92, 743)
 shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_wtcfe")]
+position = Vector2(736, 1447)
+
+[node name="key" type="Area2D" parent="." unique_id=565964906]
+position = Vector2(1013, -420.99994)
+scale = Vector2(0.12449735, 0.098130606)
+script = ExtResource("2_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="key" unique_id=832681636]
+texture = ExtResource("3_0hol4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="key" unique_id=520540885]
+polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)
+
+[node name="maze" type="StaticBody2D" parent="." unique_id=509951519]
+position = Vector2(975.00006, 1536.0001)
+scale = Vector2(0.052300762, 2.1108036)
+
+[node name="maze2" type="StaticBody2D" parent="maze" unique_id=1047649263]
+position = Vector2(-8087.837, -523.9711)
+scale = Vector2(9.640625, 0.20049018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze2" unique_id=32364055]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze3" type="StaticBody2D" parent="maze" unique_id=1404015590]
+position = Vector2(-6481.742, -373.79135)
+scale = Vector2(4.2869277, 0.20049018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze3" unique_id=1134580058]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze4" type="StaticBody2D" parent="maze" unique_id=593043873]
+position = Vector2(-18776.018, -731.9488)
+scale = Vector2(8.11096, 0.20049018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze4" unique_id=1881100603]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze5" type="StaticBody2D" parent="maze" unique_id=52647680]
+position = Vector2(-18546.574, -225.03284)
+scale = Vector2(3.4205437, 0.21268858)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze5" unique_id=1285751147]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze6" type="StaticBody2D" parent="maze" unique_id=1473461959]
+position = Vector2(-9368.891, -171.49878)
+scale = Vector2(10.029207, 0.20049018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze6" unique_id=393633606]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze7" type="StaticBody2D" parent="maze" unique_id=1988513168]
+position = Vector2(-6481.742, -205.1352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze7" unique_id=137719094]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze8" type="StaticBody2D" parent="maze" unique_id=793782739]
+position = Vector2(4263.8, -205.1352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze8" unique_id=626198874]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze9" type="StaticBody2D" parent="maze" unique_id=1566923006]
+position = Vector2(-14913.741, -260.09058)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze9" unique_id=345915912]
+position = Vector2(936.88885, -84.32807)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze10" type="StaticBody2D" parent="maze" unique_id=1305085624]
+position = Vector2(-8298.159, -553.3438)
+scale = Vector2(1, 1.0758005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze10" unique_id=370027978]
+position = Vector2(936.88885, -84.32807)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze11" type="StaticBody2D" parent="maze" unique_id=683724721]
+position = Vector2(-2007.6199, -859.38837)
+scale = Vector2(4.2869277, 0.20049018)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze11" unique_id=151567455]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="maze12" type="StaticBody2D" parent="maze" unique_id=839990382]
+position = Vector2(-2409.1433, -893.0249)
+scale = Vector2(1, 1.0758005)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze12" unique_id=2086837321]
+position = Vector2(936.88885, -84.32807)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="maze" unique_id=317264326]
+position = Vector2(750, -84.5)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="fake key" type="Area2D" parent="." unique_id=41253726]
+script = ExtResource("4_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="fake key" unique_id=1610275975]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+texture = ExtResource("3_0hol4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fake key" unique_id=1914925986]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)
+
+[node name="fake key2" type="Area2D" parent="." unique_id=1560252535]
+position = Vector2(702, 96)
+script = ExtResource("4_0hol4")
+message_text = "Still wrong key!"
+
+[node name="Sprite2D" type="Sprite2D" parent="fake key2" unique_id=682853661]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+texture = ExtResource("3_0hol4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fake key2" unique_id=1032863776]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)
+
+[node name="fake key3" type="Area2D" parent="." unique_id=858359416]
+position = Vector2(664, -655)
+script = ExtResource("4_0hol4")
+message_text = "Definatley not this one!"
+
+[node name="Sprite2D" type="Sprite2D" parent="fake key3" unique_id=385109993]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+texture = ExtResource("3_0hol4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="fake key3" unique_id=716879216]
+position = Vector2(73.565384, 915.97986)
+scale = Vector2(0.11931109, 0.1477953)
+polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)
+
+[node name="Locked Door" parent="." unique_id=97506012 instance=ExtResource("5_kdubu")]
+position = Vector2(8, -614)
+script = ExtResource("6_d21ai")
+locked_text = "Key needed"
+open_text = "Press E to enter"
+
+[node name="Door2" parent="." unique_id=1663291618 instance=ExtResource("5_kdubu")]
+position = Vector2(538.00006, 1511.0001)
+scale = Vector2(2.710087, 0.40180972)
+target_scene = "uid://5uypg1nx8upi"
+
+[connection signal="body_entered" from="key" to="key" method="_on_body_entered"]
+[connection signal="body_exited" from="key" to="key" method="_on_body_exited"]
+[connection signal="body_entered" from="fake key" to="fake key" method="_on_body_entered"]
+[connection signal="body_exited" from="fake key" to="fake key" method="_on_body_exited"]
+[connection signal="body_entered" from="fake key2" to="fake key2" method="_on_body_entered"]
+[connection signal="body_exited" from="fake key2" to="fake key2" method="_on_body_exited"]
+[connection signal="body_entered" from="fake key3" to="fake key3" method="_on_body_entered"]
+[connection signal="body_exited" from="fake key3" to="fake key3" method="_on_body_exited"]
+[connection signal="body_entered" from="Locked Door" to="Locked Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Locked Door" to="Locked Door" method="_on_body_exited"]

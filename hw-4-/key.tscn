@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ckndrblghgfc0"]
+
+[ext_resource type="Script" uid="uid://bwpcoyhcqg7uh" path="res://key.gd" id="1_p0yg6"]
+[ext_resource type="Texture2D" uid="uid://odh7xb7tdxnk" path="res://Scenes/key.png" id="2_krfvd"]
+
+[node name="Node2D" type="Node2D" unique_id=217248823]
+
+[node name="key" type="Area2D" parent="." unique_id=1520849141]
+script = ExtResource("1_p0yg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="key" unique_id=1699853829]
+texture = ExtResource("2_krfvd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="key" unique_id=843941324]
+polygon = PackedVector2Array(-299, 238, -17, -70, -33, -144, -14, -220, 39, -277, 109, -302, 196, -295, 260, -248, 299, -188, 308, -124, 296, -54, 248, 7, 180, 45, 102, 44, 79, 41, -169, 302, -257, 299)

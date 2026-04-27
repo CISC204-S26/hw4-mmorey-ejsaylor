@@ -78,7 +78,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_jhr5r")
 
 [node name="Door" parent="." unique_id=97506012 instance=ExtResource("3_x556d")]
-position = Vector2(-3, 257)
+position = Vector2(-3, 259)
 target_scene = "uid://5uypg1nx8upi"
 
 [node name="Door2" parent="." unique_id=1446754071 instance=ExtResource("3_x556d")]
