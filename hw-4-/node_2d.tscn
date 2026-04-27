@@ -14,7 +14,7 @@ size = Vector2(146, 1500)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(192, 1500)
 
-[node name="Node2D" type="Node2D" unique_id=1559195736]
+[node name="maze" type="Node2D" unique_id=1559195736]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1384799596]
 offset_left = 15.0
@@ -56,35 +56,3 @@ position = Vector2(1504, 7)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/Walls/WallRight" unique_id=1881292448]
 position = Vector2(92, 743)
 shape = SubResource("RectangleShape2D_q6r6c")
-
-[node name="maze" type="StaticBody2D" parent="ColorRect" unique_id=1214795988]
-position = Vector2(238.44751, 856.6039)
-scale = Vector2(0.32, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/maze" unique_id=1815850025]
-position = Vector2(750, 63)
-shape = SubResource("RectangleShape2D_epypp")
-
-[node name="maze" type="StaticBody2D" parent="." unique_id=204072886]
-position = Vector2(0, 1168)
-scale = Vector2(0.32, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="maze" unique_id=1698218886]
-position = Vector2(750, 63)
-shape = SubResource("RectangleShape2D_epypp")
-
-[node name="maze2" type="StaticBody2D" parent="." unique_id=1712061238]
-position = Vector2(10, 540)
-scale = Vector2(0.32, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="maze2" unique_id=1686037337]
-position = Vector2(750, 63)
-shape = SubResource("RectangleShape2D_epypp")
-
-[node name="maze3" type="StaticBody2D" parent="." unique_id=288164891]
-position = Vector2(0, 190)
-scale = Vector2(0.32, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="maze3" unique_id=362688139]
-position = Vector2(750, 63)
-shape = SubResource("RectangleShape2D_epypp")
