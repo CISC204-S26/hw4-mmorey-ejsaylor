@@ -82,7 +82,7 @@ texture = ExtResource("4_jhr5r")
 
 [node name="Generator room door" parent="." unique_id=97506012 instance=ExtResource("3_x556d")]
 position = Vector2(-1, 259)
-target_scene = "generator_room.tscn"
+target_scene = "uid://dw68tk1t04cl5"
 
 [node name="Battle room door" parent="." unique_id=1446754071 instance=ExtResource("3_x556d")]
 position = Vector2(1206, 276)
