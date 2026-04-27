@@ -30,9 +30,6 @@ offset_right = 1500.0
 offset_bottom = 1500.0
 color = Color(0.2091254, 0.12245969, 6.016344e-08, 1)
 
-[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_vxwg8")]
-position = Vector2(127, 101)
-
 [node name="Walls" type="Node2D" parent="." unique_id=139144868]
 
 [node name="WallTop" type="StaticBody2D" parent="Walls" unique_id=1034650643]
@@ -109,3 +106,5 @@ target_scene = "uid://btql1xnudw1x4"
 [node name="GeneratorMachine" parent="." unique_id=1915585199 instance=ExtResource("10_cggv2")]
 position = Vector2(67, 1139)
 rotation = -1.5707964
+
+[node name="Player" parent="." unique_id=2129770638 instance=ExtResource("1_vxwg8")]

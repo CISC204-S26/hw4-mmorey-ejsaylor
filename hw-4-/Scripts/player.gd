@@ -5,9 +5,15 @@ extends CharacterBody2D
 
 var current_interactable: Node = null
 var prompt_label: Label = null
+var e_was_pressed: bool = false
 
 func _ready() -> void:
-	add_to_group("player")
+	prompt_label = get_node_or_null("CanvasLayer/Label")
+	
+	if prompt_label != null:
+		prompt_label.text = ""
+	else:
+		print("Player is missing CanvasLayer/Label.")
 
 func _physics_process(_delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -24,6 +30,26 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction.normalized() * speed
 	move_and_slide()
 
+func _process(_delta: float) -> void:
+	if Input.is_key_pressed(KEY_E):
+		if e_was_pressed == false:
+			e_was_pressed = true
+			print("E was pressed")
+
+			if current_interactable != null:
+				print("Trying to interact with: ", current_interactable.name)
+
+				if current_interactable.has_method("interact"):
+					current_interactable.interact()
+				else:
+					print("This object has no interact function.")
+			else:
+				print("No interactable selected.")
+	else:
+		e_was_pressed = false
+
+
+
 func take_damage() -> void:
 	sprite.modulate = Color(1, 0, 0)
 	await get_tree().create_timer(0.2).timeout
@@ -32,6 +58,20 @@ func take_damage() -> void:
 func _on_hitbox_body_entered(body: Node) -> void:
 	if body.is_in_group("enemy"):
 		take_damage()
+
+	if Input.is_action_just_pressed("interact"):
+		print("E was pressed")
+
+		if current_interactable != null:
+			print("Trying to interact with: ", current_interactable.name)
+
+			if current_interactable.has_method("interact"):
+				current_interactable.interact()
+			else:
+				print("This object has no interact function.")
+		else:
+			print("No interactable selected.")
+
 
 func set_interactable(target: Node, prompt_text: String) -> void:
 	current_interactable = target
