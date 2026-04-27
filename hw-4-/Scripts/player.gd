@@ -3,13 +3,10 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @onready var sprite = $Sprite2D
 
-<<<<<<< HEAD
 var has_key: bool = false 
-=======
 var current_interactable: Node = null
 var prompt_label: Label = null
 var e_was_pressed: bool = false
->>>>>>> 4eb80f76b38bf1b4765b5302835b5fde6b6097c8
 
 func _ready() -> void:
 	prompt_label = get_node_or_null("CanvasLayer/Label")
