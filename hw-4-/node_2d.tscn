@@ -19,6 +19,28 @@ size = Vector2(146, 1500)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(192, 1500)
 
+[sub_resource type="QuadMesh" id="QuadMesh_kdubu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_d21ai"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rj586"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4d7sh"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ir8iy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hqns4"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_x0ka3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0h7mo"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nr8wp"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_d2bti"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ta5nu"]
+
 [node name="maze" type="Node2D" unique_id=1559195736]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1384799596]
@@ -89,6 +111,11 @@ scale = Vector2(9.640625, 0.20049018)
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze2" unique_id=1917006540]
+position = Vector2(746.45966, -81.27261)
+scale = Vector2(1493.9193, 163.54523)
+mesh = SubResource("QuadMesh_kdubu")
+
 [node name="maze3" type="StaticBody2D" parent="maze" unique_id=1404015590]
 position = Vector2(-6481.742, -373.79135)
 scale = Vector2(4.2869277, 0.20049018)
@@ -96,6 +123,11 @@ scale = Vector2(4.2869277, 0.20049018)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze3" unique_id=1134580058]
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze3/CollisionShape2D" unique_id=718532182]
+position = Vector2(-2.9313354, 1.7958488)
+scale = Vector2(1485.217, 170.13412)
+mesh = SubResource("QuadMesh_d21ai")
 
 [node name="maze4" type="StaticBody2D" parent="maze" unique_id=593043873]
 position = Vector2(-18776.018, -731.9488)
@@ -105,6 +137,11 @@ scale = Vector2(8.11096, 0.20049018)
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze4/CollisionShape2D" unique_id=1424947488]
+position = Vector2(27.91777, -0.5670996)
+scale = Vector2(1447.3986, 170.13419)
+mesh = SubResource("QuadMesh_rj586")
+
 [node name="maze5" type="StaticBody2D" parent="maze" unique_id=52647680]
 position = Vector2(-18546.574, -225.03284)
 scale = Vector2(3.4205437, 0.21268858)
@@ -112,6 +149,11 @@ scale = Vector2(3.4205437, 0.21268858)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze5" unique_id=1285751147]
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze5/CollisionShape2D" unique_id=141051169]
+position = Vector2(52.137085, 0.9705925)
+scale = Vector2(1503.6582, 167.05887)
+mesh = SubResource("QuadMesh_4d7sh")
 
 [node name="maze6" type="StaticBody2D" parent="maze" unique_id=1473461959]
 position = Vector2(-9368.891, -171.49878)
@@ -121,12 +163,22 @@ scale = Vector2(10.029207, 0.20049018)
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze6/CollisionShape2D" unique_id=1395879405]
+position = Vector2(3.047699, 0.6148834)
+scale = Vector2(1498.4697, 167.77127)
+mesh = SubResource("QuadMesh_ir8iy")
+
 [node name="maze7" type="StaticBody2D" parent="maze" unique_id=1988513168]
 position = Vector2(-6481.742, -205.1352)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze7" unique_id=137719094]
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze7/CollisionShape2D" unique_id=1864049038]
+position = Vector2(5.247055, 0.40880966)
+scale = Vector2(1472.2538, 171.0249)
+mesh = SubResource("QuadMesh_hqns4")
 
 [node name="maze8" type="StaticBody2D" parent="maze" unique_id=793782739]
 position = Vector2(4263.8, -205.1352)
@@ -135,12 +187,22 @@ position = Vector2(4263.8, -205.1352)
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze8/CollisionShape2D" unique_id=702276411]
+position = Vector2(-4.313751, -0.30184746)
+scale = Vector2(1453.1353, 169.60362)
+mesh = SubResource("QuadMesh_x0ka3")
+
 [node name="maze9" type="StaticBody2D" parent="maze" unique_id=1566923006]
 position = Vector2(-14913.741, -260.09058)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze9" unique_id=345915912]
 position = Vector2(936.88885, -84.32807)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze9/CollisionShape2D" unique_id=1467866683]
+position = Vector2(-9.56012, 0.9475212)
+scale = Vector2(1472.254, 169.60364)
+mesh = SubResource("QuadMesh_0h7mo")
 
 [node name="maze10" type="StaticBody2D" parent="maze" unique_id=1305085624]
 position = Vector2(-8298.159, -553.3438)
@@ -150,6 +212,11 @@ scale = Vector2(1, 1.0758005)
 position = Vector2(936.88885, -84.32807)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze10/CollisionShape2D" unique_id=396319927]
+position = Vector2(19.1203, 0.8774462)
+scale = Vector2(1491.3746, 168.66275)
+mesh = SubResource("QuadMesh_nr8wp")
+
 [node name="maze11" type="StaticBody2D" parent="maze" unique_id=683724721]
 position = Vector2(-2007.6199, -859.38837)
 scale = Vector2(4.2869277, 0.20049018)
@@ -158,6 +225,11 @@ scale = Vector2(4.2869277, 0.20049018)
 position = Vector2(750, -84.5)
 shape = SubResource("RectangleShape2D_0e48y")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze11/CollisionShape2D" unique_id=1716948246]
+position = Vector2(-25.231934, 0.6143646)
+scale = Vector2(1538.7389, 167.77121)
+mesh = SubResource("QuadMesh_d2bti")
+
 [node name="maze12" type="StaticBody2D" parent="maze" unique_id=839990382]
 position = Vector2(-2409.1433, -893.0249)
 scale = Vector2(1, 1.0758005)
@@ -165,6 +237,11 @@ scale = Vector2(1, 1.0758005)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze/maze12" unique_id=2086837321]
 position = Vector2(936.88885, -84.32807)
 shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="maze/maze12/CollisionShape2D" unique_id=1108840040]
+position = Vector2(-9.560181, 0.43707037)
+scale = Vector2(1472.2532, 169.54349)
+mesh = SubResource("QuadMesh_ta5nu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="maze" unique_id=317264326]
 position = Vector2(750, -84.5)

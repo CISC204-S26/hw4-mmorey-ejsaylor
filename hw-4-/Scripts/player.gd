@@ -90,3 +90,8 @@ func clear_interactable(target: Node) -> void:
 func show_message(text: String) -> void:
 	if prompt_label != null:
 		prompt_label.text = text
+
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

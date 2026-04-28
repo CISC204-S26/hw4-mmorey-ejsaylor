@@ -38,6 +38,6 @@ func hide_text() -> void:
 
 func collect_key() -> void:
 	if player_inside:
-		player_inside.has_key = true  # ✅ GIVE PLAYER THE KEY
+		player_inside.has_key = true  
 	hide_text()
 	queue_free()

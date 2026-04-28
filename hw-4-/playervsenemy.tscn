@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbgnxlij38int"]
 
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="1_rq3nv"]
+[ext_resource type="PackedScene" uid="uid://ded3ju7w5wu5n" path="res://Scenes/player.tscn" id="1_rq3nv"]
 [ext_resource type="Texture2D" uid="uid://bgx1ri0gn78q6" path="res://icon.svg" id="2_rq3nv"]
 [ext_resource type="Script" uid="uid://dmymc2ljpmj03" path="res://enemy.gd" id="3_d02fk"]
 [ext_resource type="Script" uid="uid://84o7exsqd02u" path="res://area_2d.gd" id="4_8flhr"]
@@ -41,7 +41,7 @@ color = Color(0, 0, 0.29128972, 1)
 position = Vector2(112.21061, 1383.1312)
 scale = Vector2(1.0018804, 0.9972107)
 
-[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1773743914]
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=1773743914 groups=["enemy"]]
 position = Vector2(285, 910)
 scale = Vector2(1.2801214, 1.0450459)
 script = ExtResource("3_d02fk")
@@ -55,7 +55,7 @@ texture = ExtResource("2_rq3nv")
 position = Vector2(161.75, 167.25)
 shape = SubResource("RectangleShape2D_td35k")
 
-[node name="hitbox" type="Area2D" parent="Enemy" unique_id=1250784411]
+[node name="hitbox" type="Area2D" parent="Enemy" unique_id=1250784411 groups=["enemy"]]
 position = Vector2(164.83873, 179.54509)
 scale = Vector2(-1.0364703, -1.2224925)
 
@@ -111,6 +111,8 @@ position = Vector2(1522.0001, 17)
 scale = Vector2(-1.3599975, 1)
 target_scene = "uid://btql1xnudw1x4"
 
+[connection signal="area_entered" from="Enemy/hitbox" to="ColorRect/Player" method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Enemy/hitbox" to="ColorRect/Player" method="_on_hitbox_area_exited"]
 [connection signal="body_entered" from="Enemy/hitbox" to="Enemy" method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -18,14 +18,10 @@ func deactivate() -> void:
 	active = false
 	player = null
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if active and is_instance_valid(player):
-		global_position = global_position.move_toward(
-			player.global_position,
-			speed * delta
-		)
+		velocity = (player.global_position - global_position).normalized() * speed
 	else:
-		global_position = global_position.move_toward(
-			start_position,
-			speed * delta
-		)
+		velocity = (start_position - global_position).normalized() * speed
+
+	move_and_slide()
